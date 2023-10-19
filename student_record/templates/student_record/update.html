@@ -1,0 +1,17 @@
+{% extends "student_record/homepage.html" %}
+{% block base %}
+<form action="" method='POST'>
+    {% csrf_token %}
+    <table>
+        {% for s in form %}
+        <tr>
+            <td>{{s.label}}</td>
+            <td>{{s}}</td>
+        </tr>
+        {% endfor %}
+        <tr >
+            <td colspan="2" align='center'><button type='submit' class='btn btn-primary'>Update Record</button></td>
+        </tr>
+    </table>
+</form> 
+{% endblock base %}

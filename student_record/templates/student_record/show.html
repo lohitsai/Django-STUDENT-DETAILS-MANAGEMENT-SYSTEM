@@ -1,0 +1,40 @@
+{% extends "student_record/homepage.html" %} {% block base %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Roll No</th>
+      <th scope="col">Name</th>
+      <th scope="col">Current Class</th>
+      <th scope="col">Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for stu_int in stu %}
+    <tr>
+      <td scope="row">{{stu_int.roll_no}}</td>
+      <td>{{stu_int.name}}</td>
+      <td>{{stu_int.current_class}}</td>
+      <td>{{stu_int.age}}</td>
+      <td>
+        <a class="btn" href="{% url 'editstu' stu_int.roll_no %}">Edit</a>
+      </td>
+      <td>
+        <button class="btn" onclick="my_modal_1.showModal()">Delete</button>
+        <dialog id="my_modal_1" class="modal">
+          <div class="modal-box">
+            <p class="py-4">Are you sure</p>
+            <div class="modal-action">
+              <a
+                href="{% url 'deletestu' stu_int.roll_no %}"
+                class="btn btn-error"
+                >Yes</a
+              >
+            </div>
+          </div>
+        </dialog>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock base %}

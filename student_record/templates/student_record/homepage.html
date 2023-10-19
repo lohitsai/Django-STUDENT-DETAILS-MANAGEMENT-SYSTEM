@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Students Record</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <div class="navbar bg-base-100">
+    <a class="btn btn-ghost normal-case text-xl" href="{% url 'stu_homepage' %}"
+      >Home</a
+    >
+    <a class="btn btn-ghost normal-case text-xl" href="{% url 'showstu' %}"
+      >Show</a
+    >
+    <a class="btn btn-ghost normal-case text-xl" href="{% url 'createstu' %}"
+      >Add</a
+    >
+  </div>
+  {% block base %} {% endblock base %}
+</html>

@@ -1,0 +1,20 @@
+{% extends "student_record/homepage.html" %}
+{% block base %}
+
+<form action="" method='POST'>
+    {% csrf_token %}
+    <table>
+        {% for student in stu %}
+        <tr>
+            <td>{{student.label}}</td>
+            <td>{{student}}</td>
+        </tr>
+        {% endfor %}
+        <tr >
+            <td colspan="2" align='center'>
+                <button type='submit' class='btn btn-primary'>ADD Record</button>
+            </td>
+        </tr>
+    </table>
+</form> 
+{% endblock base %}
